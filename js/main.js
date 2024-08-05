@@ -1,3 +1,24 @@
+//exit intent pop-up
+const pop_Up = document.querySelector(".pop-up-intent");
+const closeBtn = document.querySelector(".close-btn");
+const body = document.querySelector('body');
+let mouseY;
+pop_Up.classList.remove("show");
+closeBtn.addEventListener("click", () => {
+    pop_Up.classList.remove("show");
+
+});
+
+const handleMouseleave = (event) => {
+  mouseY = event.clientY;
+  if (mouseY < 0) {
+    pop_Up.classList.add("show");
+    // add additional code for exit intent here
+  }
+};
+
+body.addEventListener('mouseleave', handleMouseleave);
+
 (function ($) {
     "use strict";
 
